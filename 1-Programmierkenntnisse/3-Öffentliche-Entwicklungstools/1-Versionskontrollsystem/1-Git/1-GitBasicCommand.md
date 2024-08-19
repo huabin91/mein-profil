@@ -82,6 +82,7 @@ $ git log
 Options that let you show  only a subset of commits.
 
 ## 1.5 Undoing Things
+### 1.5.1 after commit, also add new files / modify commit message
 When you commit too early and possibly forget to add some files, or you muss up you commit message.
 ```
 $ git commit --amend
@@ -89,6 +90,17 @@ $ git commit -m '<commit new message>'
 $ git add <forgotten_file>
 $ git commit --amend
 ```
+### 1.5.2 Unstaging a Staged File
+```
+$ git reset HEAD <file>
+```
+The file is modified but once again unstaged. If you call it with `--hard`, in this instance the file in your working directory is tocued.
+### 1.5.3 Unmodifying a Modified File
+```
+$ git checkout -- <file> 
+```
+If you realize that you don't want to keep your changes to the file, easily unmodify it - revert to what it looked like when you last committed.
+
 ## 1.6 Removing Files
 To remove a file from Git, you have to **remove it from your tracked files and then commit**; 
 If you modify the file and added it to the index already, you must force the removal with the -f option.
