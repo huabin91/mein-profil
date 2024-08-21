@@ -147,14 +147,23 @@ doc/*.txt   # ignore doc/notes.txt, but not doc/server/arch.txt
 Github maintains a fairly comprehensive list of good .gitignore file examples for dozens or projects and languages at https://github.com/github/gitignore .
 
 # 2. Git Branching
-## 2.1 Creating a New Branch
+## 2.1 Branch Management
+If you run it with no arguments, you get a simple listing of your current branches:
+```
+$ git branch
+	iss53
+*	master
+	testing
+```
+Notice the `*` charracter that prefixes the master branch: it indicates the branch that you currently have checked out (the Branch that HEAD points to). This means that you commit at this point, the master branch will be moved forward with your new work.
+### 2.1.1 Creating a New Branch
 **Create a branch for a new story you're working on.**
 
 You want to create a new branch called testing, you do this with the `git branch` command:
 ```
 $ git branch testing
 ```
-## 2.2 Switching Branches
+### 2.1.2 Switching Branches
 To switch to an existing branch, you run the `git checkout` command:
 ```
 $ git checkout testing
@@ -171,19 +180,11 @@ $ git branch iss53
 $ git checkout iss53
 ```
 Switched to a new branch iss53.
-## 2.3 Basic Merging
+### 2.1.3 Basic Merging
 All you have to do is check out the branch you want to merge into and then run `git merge` command:
 ```
 $ git checkout master
 $ git merge iss53
 ```
-## 2.4 Basic Merge Conflicts
+### 2.1.4 Basic Merge Conflicts
 Git hasn't automatically created a new merge commit. It has paused the process while you resolve the conflict. If you want to see which files unmerged at any point after a merge conflict, you can run `git status`.
-## 2.5 Branch Management
-If you run it with no arguments, you get a simple listing of your current branches:
-```
-$ git branch
-	iss53
-*	master
-	testing
-```
