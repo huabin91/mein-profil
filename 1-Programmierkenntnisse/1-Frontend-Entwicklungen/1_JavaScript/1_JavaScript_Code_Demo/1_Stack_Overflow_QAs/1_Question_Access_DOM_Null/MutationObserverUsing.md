@@ -44,7 +44,7 @@ Merge mutiple changes: MutationObserver passes all the changes that occur to the
 ```js
 const observer = new MutationObserver((mutationsList) => {
     mutationsList.forEach((mutation) => {
-        if (mutation.type === 'childList) {
+        if (mutation.type === 'childList') {
             // batch process changes
         }
     })
